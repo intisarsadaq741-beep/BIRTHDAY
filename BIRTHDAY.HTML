@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Baby Mushtii's Birthday 👑</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: Georgia, "Times New Roman", serif;
+            background:
+                radial-gradient(circle at top, #fff7fb 0%, #ffd9e8 45%, #f5a9c8 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px 15px;
+            color: #5a2940;
+        }
+
+        .card {
+            width: 100%;
+            max-width: 750px;
+            background: rgba(255, 255, 255, 0.94);
+            border: 3px solid #e8a0bc;
+            border-radius: 30px;
+            padding: 45px 35px;
+            text-align: center;
+            box-shadow: 0 15px 45px rgba(120, 40, 75, 0.2);
+        }
+
+        .crown {
+            font-size: 55px;
+            margin-bottom: 10px;
+        }
+
+        .queen-title {
+            font-size: 34px;
+            font-weight: bold;
+            color: #c52f68;
+            letter-spacing: 1px;
+            text-shadow: 1px 1px 0 #ffd1e2;
+            margin-bottom: 30px;
+        }
+
+        .message {
+            font-size: 19px;
+            line-height: 1.75;
+            margin: 0;
+        }
+
+        strong {
+            color: #c52f68;
+        }
+
+        .ending {
+            margin-top: 25px;
+            font-size: 22px;
+        }
+
+        .hearts {
+            font-size: 28px;
+            margin-top: 25px;
+        }
+
+        .button {
+            margin-top: 30px;
+            padding: 14px 28px;
+            border: none;
+            border-radius: 30px;
+            background: #c52f68;
+            color: white;
+            font-size: 17px;
+            font-family: Georgia, "Times New Roman", serif;
+            cursor: pointer;
+            box-shadow: 0 6px 15px rgba(197, 47, 104, 0.25);
+        }
+
+        .button:hover {
+            background: #a92355;
+        }
+
+        #surprise {
+            display: none;
+            margin-top: 25px;
+            font-size: 21px;
+            font-weight: bold;
+            color: #c52f68;
+        }
+
+        .floating-heart {
+            position: fixed;
+            bottom: -40px;
+            font-size: 25px;
+            animation: floatUp 5s linear forwards;
+            pointer-events: none;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-110vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .card {
+                padding: 35px 22px;
+            }
+
+            .queen-title {
+                font-size: 26px;
+            }
+
+            .message {
+                font-size: 17px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+
+        <div class="crown">👑</div>
+
+        <div class="queen-title">
+            👑 IT'S THE QUEEN'S BIRTHDAY 👑
+        </div>
+
+        <p class="message">
+
+            Happy Birthday, baby Mushtii! 🎂💗
+            <br><br>
+
+            Today isn't just any day...
+            <strong>THE QUEEN WAS BORN! 👑✨</strong>
+            <br><br>
+
+            I hope your birthday is filled with happiness, laughter,
+            love, beautiful memories and everything that makes your heart happy. 🥹💗
+            <br><br>
+
+            You deserve nothing but the absolute best.
+            May this new chapter bring you endless blessings,
+            success, happiness and all the beautiful things you've been
+            wishing and praying for. 🤲🏽✨
+            <br><br>
+
+            I'm genuinely grateful that I got to know you.
+            You're such a sweet and special person, and I hope you always
+            remember how loved and appreciated you are. 🫶🏽
+            <br><br>
+
+            Keep shining, keep smiling and keep being the amazing person
+            you are.
+            <br><br>
+
+            May Allah bless you with happiness, good health, success,
+            beautiful memories and everything your heart desires. Ameen. 🤲🏽💗
+            <br><br>
+
+            <strong>HAPPY BIRTHDAY ONCE AGAIN, BABY MUSHTII! 🎂🎀</strong>
+            <br>
+            <strong>LONG LIVE THE QUEEN! 👑🥳💗</strong>
+
+        </p>
+
+        <div class="hearts">
+            💗 ✨ 🎀 ✨ 💗
+        </div>
+
+        <button class="button" onclick="showSurprise()">
+            Click for a Surprise 💌
+        </button>
+
+        <div id="surprise">
+            🎁 Surprise! The Queen deserves all the love in the world! 👑💗
+        </div>
+
+    </div>
+
+    <script>
+        function showSurprise() {
+
+            document.getElementById("surprise").style.display = "block";
+
+            for (let i = 0; i < 20; i++) {
+
+                let heart = document.createElement("div");
+
+                heart.className = "floating-heart";
+
+                heart.innerHTML = ["💗", "💕", "💖", "🎀", "✨"][Math.floor(Math.random() * 5)];
+
+                heart.style.left = Math.random() * 100 + "vw";
+
+                heart.style.animationDuration =
+                    (3 + Math.random() * 3) + "s";
+
+                document.body.appendChild(heart);
+
+                setTimeout(function() {
+                    heart.remove();
+                }, 6000);
+            }
+        }
+    </script>
+
+</body>
+</html>
